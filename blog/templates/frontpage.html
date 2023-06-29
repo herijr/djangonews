@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Home | {% endblock %}
+{% block content %}
+
+<div class="row">
+<div class="col-lg-8 conteudo">
+  {% for post in newest_posts %}
+  <div class="row linha">
+    <div class="col-lg-6 imagem-home">
+      <img class="img-fluid imagem-border" src="{{ post.get_thumbnail }}">
+    </div>
+    <div class="col-lg-6 titulo-post-home">
+      <a href="{% url 'post' post.slug %}"><h2>{{ post.title }}</h2></a>
+    </div>
+  </div>
+  {% endfor %}
+  </div><div class="col-lg-4 lateral"><div class="row"><div class="col-md-12"></div></div></div>
+</div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Usuário Logado | {% endblock %}
+
+{% block content %}
+        <h2 class="title">Usuário Logado - {{ autor.name }}</h2>
+        <a href="{% url 'logout' %}" class="btn btn-danger" role="button">Log out</a>
+        <br><br>
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>Meus posts</h2>
+                  {% if posts %}
+                    <table class="table is-fullwidth">
+                       <thead>
+                          <tr>
+                             <th>Título</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                       {% for post in posts %}
+                          <tr>
+                             <td><a href="{% url 'post' post.category.slug post.slug %}">{{ post.title }}</a></td>
+                          </tr>
+                          {% endfor %}
+                       </tbody>
+                    </table>
+                  <br>
+                  <a href="{% url 'add_post' %}" class="btn btn-dark">Novo post</a>
+              </div>
+          </div>
+                  {% else %}
+                    <p>Você ainda não possui posts...</p>
+                    <br>
+                    <a href="{% url 'add_post' %}" class="btn btn-dark">Novo post</a>
+                </div>
+            </div>  
+                    {% endif %}
+{% endblock %}

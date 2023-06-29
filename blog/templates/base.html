@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>{% block title %}{% endblock %}Django News</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <style>
+            .centro-pagina{
+              margin-top: 40px;
+              margin-bottom: 80px;
+            }
+            .linha{
+              margin-top: 20px;
+            }
+            .imagem-home{
+              padding: 10px;
+            }
+            .imagem-border{
+              border-radius: 6px;
+            }
+            .titulo-post-home{
+              padding: 15px;
+            }
+            .date-text{
+              color: #747478;
+            }
+            body{
+              color: #1e1e26;
+            }
+            h2{
+              font-weight: bold;
+              font-size: 26px;
+            }
+            p{
+              font-size: 20px;
+            }
+            a, a:hover{
+              color: #1e1e26;
+            }
+            .conteudo{
+
+              background-color: #fff;
+            }
+            .conteudo-post{
+              padding: 20px;
+              background-color: #fff;
+            }
+            .texto-post{
+              text-align: justify;
+            }
+            .titulo-post{
+              padding: 0px;
+            }
+            .img-post{
+              margin-bottom: 30px;
+            }
+            /*
+            .lateral{
+              background-color: #00004f;
+            }
+            */
+
+            /*
+            * Footer
+            */
+            .blog-footer {
+              padding: 2.5rem 0;
+              color: #fff;
+              text-align: center;
+              background-color: #1e1e26;
+              border-top: .05rem solid #e5e5e5;
+            }
+            .blog-footer p:last-child {
+              margin-bottom: 0;
+            }
+            /* Style inputs, select elements and textareas */
+            input[type=text], select, textarea{
+              width: 100%;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              resize: vertical;
+            }
+            input[type=password]{
+              width: 100%;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              resize: vertical;
+            }
+            input[type=file]{
+              width: 100%;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              resize: vertical;
+            }
+            /* Style the label to display next to the inputs */
+            label {
+              display: inline-block;
+            }
+
+         </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #1e1e26;">
+        <div class="container">
+          <a class="navbar-brand" href="/">Django News</a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse justify-content-md-end collapse" id="navbarsExample08" style="">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add_post' %}">Novo Post</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+
+      </nav>
+      <div class="container centro-pagina">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+        <!-- Footer -->
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <footer class="blog-footer">
+          <p>Django News © 2023</p>
+        </footer>
+    </body>
+</html>
